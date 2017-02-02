@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+    *{
+      padding:10px;
+      text-align: center;
+    }
+    body{
+    width:95%;
+    border: 16px solid red;
+    border-radius: 20px;
+    margin: 10px;
+    padding-bottom:50px;
+    background: linear-gradient(135deg, rgba(157,213,58,1) 0%,rgba(161,213,79,1) 50%,rgba(128,194,23,1) 51%,rgba(124,188,10,1) 100%);
+    }
+  h3{
+    border:3px solid magenta;
+    border-radius: 5px;
+    position: absolute; left:510px; top: 135px;
+    width:150px;
+    font-size: 16px;
+    margin-right:10px;
+    padding:2px;
+    margin-bottom:20px;
+    font-size: 22px;
+    color: purple
+  }
+  #quoteblock{
+    position: absolute; left:520px; top:400px;
+    height: 700px;
+    width:700px;
+  }
+  img{
+    width:100%;
+    height: auto;
+  }
+  input{
+    width: 300px;
+    text-align:center;
+    font-size: 18px;
+  }
+  .clickables{
+    position: absolute; left:1400px; top:50px;
+    font-size:22px;
+  }
+  #addbutton{
+    background-color: lightblue;
+    width: 60px;
+    border-radius:4px;
+    border:3px solid blue;
+    margin-left: 10px;
+  }
+  .outputblock{
+    border-radius: 12px;
+    width:500px;
+    height: 750px;
+    overflow: scroll;
+    border: 5px solid green;
+    padding-left: 20px;
+    margin-left: 10px;
+  }
+  #words{
+    position: absolute; top:300px; left:750px;
+    color: purple;
+    border: 7px solid orange;
+  }
+  </style>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <title>wish_items_create</title>
+  </head>
+  <body>
+    <div class="clickables">
+      <a href="/home">Home</a> | <a href="/logout">Logout</a>
+    </div>
+    <h1>Create a New Wish List Item</h1>
+    <form class="" action="create" method="post">
+      {% csrf_token %}
+      <h3>Item/Product:</h3><input type="text" name="new_wish" value="">
+      <input id = "addbutton" type="submit" name="" value="Add">
+    </form>
+    <div id="quoteblock"><img src="/static/belt3/images/beauty.png" alt="beauty"></div>
+    <h1 id="words">Just Remember:</h1>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+    *{
+      padding:10px;
+      text-align: center;
+    }
+    body{
+    width:95%;
+    border: 16px solid red;
+    border-radius: 20px;
+    margin: 10px;
+    padding-bottom:10px;
+    background: linear-gradient(to right, rgba(205,235,142,1) 0%,rgba(165,201,86,1) 100%);
+    }
+  h3{
+    border:3px solid magenta;
+    font-size: 16px;
+    margin-right:10px;
+    padding:2px;
+  }
+  .clickables{
+    position: absolute; left:1100px; top:50px;
+    font-size:22px;
+  }
+  .outputblock{
+    border-radius: 12px;
+    width:700px;
+    height: 750px;
+    overflow: scroll;
+    border: 5px solid green;
+    padding-left: 20px;
+    margin-left: 10px;
+  }
+  h1{
+    color: navy;
+    position: absolute; top:150px; left:900px;
+    font-size: 55px;
+  }
+  </style>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <title>wish_items</title>
+  </head>
+  <body>
+    <div class="clickables">
+      <a href="/home">Home</a> | <a href="/logout">Logout</a>
+    </div>
+    <h1>"{{thiswish.item}}"</h1>
+    <div class="outputblock">
+      <h2>Users who added this product/item under their wish list:</h2>
+        {% if wishers %}
+          {% for w in wishers %}
+            <h2>{{w.name}}</h2>
+          {% endfor %}
+        {% endif %}
+    </div>
+  </body>
+</html>
